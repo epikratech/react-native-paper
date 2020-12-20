@@ -108,6 +108,19 @@ const DataTablePagination = ({
       <IconButton
         icon={({ size, color }) => (
           <MaterialCommunityIcon
+            name="page-first"
+            color={color}
+            size={size}
+            direction={I18nManager.isRTL ? 'rtl' : 'ltr'}
+          />
+        )}
+        color={theme.colors.text}
+        disabled={page === 0}
+        onPress={() => onPageChange(0)}
+      />
+      <IconButton
+        icon={({ size, color }) => (
+          <MaterialCommunityIcon
             name="chevron-left"
             color={color}
             size={size}
@@ -130,6 +143,19 @@ const DataTablePagination = ({
         color={theme.colors.text}
         disabled={numberOfPages === 0 || page === numberOfPages - 1}
         onPress={() => onPageChange(page + 1)}
+      />
+      <IconButton
+        icon={({ size, color }) => (
+          <MaterialCommunityIcon
+            name="page-last"
+            color={color}
+            size={size}
+            direction={I18nManager.isRTL ? 'rtl' : 'ltr'}
+          />
+        )}
+        color={theme.colors.text}
+        disabled={numberOfPages === 0 || page === numberOfPages - 1}
+        onPress={() => onPageChange(numberOfPages - 1)}
       />
     </View>
   );
