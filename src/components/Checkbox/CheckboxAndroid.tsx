@@ -98,7 +98,6 @@ const CheckboxAndroid = ({
   }, [status, scaleAnim, scale]);
 
   const checked = status === 'checked';
-  const indeterminate = status === 'indeterminate';
   const checkedColor = rest.color || theme.colors.accent;
   const uncheckedColor =
     rest.uncheckedColor ||
