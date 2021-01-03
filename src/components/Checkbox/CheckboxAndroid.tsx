@@ -122,12 +122,6 @@ const CheckboxAndroid = ({
     outputRange: [7, 0],
   });
 
-  const icon = indeterminate
-    ? 'minus-box'
-    : checked
-    ? 'checkbox-marked'
-    : 'checkbox-blank-outline';
-
   return (
     <TouchableRipple
       {...rest}
