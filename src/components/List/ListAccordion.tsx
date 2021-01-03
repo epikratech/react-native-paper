@@ -6,13 +6,11 @@ import {
   StyleSheet,
   StyleProp,
   TextStyle,
-  I18nManager,
+  Image,
 } from 'react-native';
 import TouchableRipple from '../TouchableRipple/TouchableRipple';
-import MaterialCommunityIcon from '../MaterialCommunityIcon';
 import Text from '../Typography/Text';
 import { withTheme } from '../../core/theming';
-
 import { ListAccordionGroupContext } from './ListAccordionGroup';
 
 type Props = {
@@ -218,12 +216,17 @@ const ListAccordion = ({
           <View
             style={[styles.item, description ? styles.multiline : undefined]}
           >
-            <MaterialCommunityIcon
-              name={isExpanded ? 'chevron-up' : 'chevron-down'}
-              color={titleColor}
-              size={24}
-              direction={I18nManager.isRTL ? 'rtl' : 'ltr'}
-            />
+            {!isExpanded ? (
+              <Image
+                source={require('../../assets/expand.png')}
+                style={{ height: 25, width: 25 }}
+              />
+            ) : (
+              <Image
+                source={require('../../assets/collapse.png')}
+                style={{ height: 25, width: 25, tintColor: titleColor }}
+              />
+            )}
           </View>
         </View>
       </TouchableRipple>

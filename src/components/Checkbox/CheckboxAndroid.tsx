@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Animated, View, StyleSheet } from 'react-native';
+import { Animated, View, StyleSheet, Image } from 'react-native';
 import color from 'color';
-import MaterialCommunityIcon from '../MaterialCommunityIcon';
 import TouchableRipple from '../TouchableRipple/TouchableRipple';
 import { withTheme } from '../../core/theming';
 import type { $RemoveChildren } from '../../types';
@@ -145,13 +144,17 @@ const CheckboxAndroid = ({
       testID={testID}
     >
       <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
-        <MaterialCommunityIcon
-          allowFontScaling={false}
-          name={icon}
-          size={24}
-          color={checkboxColor}
-          direction="ltr"
-        />
+        {checked ? (
+          <Image
+            source={require('../../assets/checked.png')}
+            style={{ height: 25, width: 25, tintColor: checkboxColor }}
+          />
+        ) : (
+          <Image
+            source={require('../../assets/unchecked.png')}
+            style={{ height: 25, width: 25, tintColor: checkboxColor }}
+          />
+        )}
         <View style={[StyleSheet.absoluteFill, styles.fillContainer]}>
           <Animated.View
             style={[

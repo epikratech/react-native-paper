@@ -3,6 +3,7 @@ import {
   AccessibilityState,
   AccessibilityTrait,
   Animated,
+  Image,
   Platform,
   StyleProp,
   StyleSheet,
@@ -316,11 +317,9 @@ const Chip = ({
             accessibilityLabel={closeIconAccessibilityLabel}
           >
             <View style={[styles.icon, styles.closeIcon]}>
-              <MaterialCommunityIcon
-                name="close-circle"
-                size={16}
-                color={iconColor}
-                direction="ltr"
+              <Image
+                source={require('../../assets/close.png')}
+                style={{ height: 16, width: 16, tintColor: iconColor }}
               />
             </View>
           </TouchableWithoutFeedback>
