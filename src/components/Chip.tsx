@@ -318,7 +318,7 @@ const Chip = ({
           >
             <View style={[styles.icon, styles.closeIcon]}>
               <Image
-                source={require('../../assets/close.png')}
+                source={require('../assets/close.png')}
                 style={{ height: 16, width: 16, tintColor: iconColor }}
               />
             </View>
